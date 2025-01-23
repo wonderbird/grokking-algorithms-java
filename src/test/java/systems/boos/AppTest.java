@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class AppTest {
 
@@ -22,9 +24,12 @@ class AppTest {
     assertThat(actual, equalTo(Optional.empty()));
   }
 
-  @Test
-  void binarySearch_targetInListWithSingleElement_returnsTargetIndex() {
-    var actual = App.binarySearch(List.of(0), 0);
+  @ParameterizedTest
+  @ValueSource(ints = { 0, 5 })
+  void binarySearch_targetInListWithSingleElement_returnsTargetIndex(
+    int listElement
+  ) {
+    var actual = App.binarySearch(List.of(listElement), listElement);
     assertThat(actual, equalTo(Optional.of(0)));
   }
 }

@@ -26,8 +26,12 @@ public class App {
       return Optional.empty();
     }
 
-    if (numbers.get(0) == target) {
-      return Optional.of(0);
+    var indexOfLowestCandidate = 0;
+    var indexOfHighestCandidate = numbers.size() - 1;
+    var indexOfCenter = (indexOfLowestCandidate + indexOfHighestCandidate) / 2;
+
+    if (numbers.get(indexOfCenter) == target) {
+      return Optional.of(indexOfCenter);
     }
 
     return Optional.empty();
