@@ -42,4 +42,10 @@ class AppTest {
     var actual = App.binarySearch(List.of(0, 1), 1);
     assertThat(actual, equalTo(Optional.of(1)));
   }
+
+  @Test
+  void binarySearch_targetFirstOfThreeElements_returns0() {
+    var actual = App.binarySearch(List.of(0, 1, 2), 0);
+    assertThat(actual, equalTo(Optional.of(0)));
+  }
 }
