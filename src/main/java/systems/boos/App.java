@@ -29,10 +29,6 @@ public class App {
     List<Integer> numbers,
     int target
   ) {
-    if (numbers.isEmpty()) {
-      return Optional.empty();
-    }
-
     var indexOfLowestCandidate = 0;
     var indexOfHighestCandidate = numbers.size() - 1;
 
