@@ -28,10 +28,16 @@ public class App {
 
     var indexOfLowestCandidate = 0;
     var indexOfHighestCandidate = numbers.size() - 1;
-    var indexOfCenter = (indexOfLowestCandidate + indexOfHighestCandidate) / 2;
 
-    if (numbers.get(indexOfCenter) == target) {
-      return Optional.of(indexOfCenter);
+    while (indexOfLowestCandidate <= indexOfHighestCandidate) {
+      var indexOfCenter =
+        (indexOfLowestCandidate + indexOfHighestCandidate) / 2;
+
+      if (numbers.get(indexOfCenter) == target) {
+        return Optional.of(indexOfCenter);
+      }
+
+      indexOfLowestCandidate = indexOfCenter + 1;
     }
 
     return Optional.empty();
