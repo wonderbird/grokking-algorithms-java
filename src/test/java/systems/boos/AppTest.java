@@ -13,6 +13,52 @@ import org.junit.jupiter.params.provider.ValueSource;
 class AppTest {
 
   @Test
+  void selectionSort_emptyList_returnsEmpty() {
+    var actual = App.selectionSort(Collections.emptyList());
+    assertThat(actual, empty());
+  }
+
+  @Test
+  void selectionSort_singleElement_returnsElement() {
+    List<Integer> input = List.of(1);
+    var expected = new Integer[] { 1 };
+
+    var actual = App.selectionSort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
+  void selectionSort_listOfSortedElements_returnsSameList() {
+    List<Integer> input = List.of(1, 7, 12);
+    var expected = new Integer[] { 1, 7, 12 };
+
+    var actual = App.selectionSort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
+  void selectionSort_twoElementsSortedDescending_sortsAscending() {
+    List<Integer> input = List.of(12, 7);
+    var expected = new Integer[] { 7, 12 };
+
+    var actual = App.selectionSort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
+  void selectionSort_severalUnsortedElements_sortsAscending() {
+    List<Integer> input = List.of(12, 7, 42, 3);
+    var expected = new Integer[] { 3, 7, 12, 42 };
+
+    var actual = App.selectionSort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
   void binarySearch_emptyList_returnsEmpty() {
     var actual = App.binarySearch(Collections.emptyList(), 0);
     assertThat(actual, equalTo(Optional.empty()));
