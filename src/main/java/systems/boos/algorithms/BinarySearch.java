@@ -1,9 +1,9 @@
-package systems.boos;
+package systems.boos.algorithms;
 
 import java.util.List;
 import java.util.Optional;
 
-class BinarySearch {
+public class BinarySearch {
 
   private BinarySearch() {}
 

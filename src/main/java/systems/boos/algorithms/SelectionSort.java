@@ -1,10 +1,10 @@
-package systems.boos;
+package systems.boos.algorithms;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-class SelectionSort {
+public class SelectionSort {
 
   private SelectionSort() {}
 

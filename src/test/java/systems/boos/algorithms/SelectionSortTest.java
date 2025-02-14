@@ -1,4 +1,4 @@
-package systems.boos;
+package systems.boos.algorithms;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
