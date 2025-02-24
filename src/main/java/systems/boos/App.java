@@ -14,5 +14,6 @@ public class App {
   static void executeDemos(Output output) {
     Demos.binarySearch(output);
     Demos.selectionSort(output);
+    Demos.sum(output);
   }
 }

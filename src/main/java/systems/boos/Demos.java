@@ -1,8 +1,7 @@
 package systems.boos;
 
 import java.util.List;
-import systems.boos.algorithms.BinarySearch;
-import systems.boos.algorithms.SelectionSort;
+import systems.boos.algorithms.*;
 
 public class Demos {
 
@@ -10,7 +9,7 @@ public class Demos {
 
   static void binarySearch(Output output) {
     output.append("Binary Search%n");
-    output.append("=============%n");
+    output.append("=============%n%n");
 
     var numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     var target = 9;
@@ -29,7 +28,7 @@ public class Demos {
       output.append("Search %d -> not found in %s%n", target, numbers);
     }
 
-    output.append("%n");
+    output.append("%n%n");
   }
 
   static void selectionSort(Output output) {
@@ -43,6 +42,18 @@ public class Demos {
 
     var sorted = SelectionSort.selectionSort(numbers);
 
-    output.append("   Sorted list: %s%n%n", sorted);
+    output.append("   Sorted list: %s%n%n%n", sorted);
+  }
+
+  public static void sum(Output output) {
+    output.append("Sum of List%n");
+    output.append("===========%n%n");
+
+    var numbers = List.of(4, 6, 3, 7);
+    output.append("Input: %s%n", numbers);
+
+    var sum = Sum.sum(numbers);
+
+    output.append("  Sum: %s%n%n%n", sum);
   }
 }
