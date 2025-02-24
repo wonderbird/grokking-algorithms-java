@@ -18,3 +18,10 @@ Input: [4, 6, 3, 7]
   Sum: 20
 
 
+Count of Items in List
+======================
+
+List: [Bred, Butter, Garlic, Ice Cream, Pizza, Cookies, Car, Rubber Duck]
+Count: 8
+
+

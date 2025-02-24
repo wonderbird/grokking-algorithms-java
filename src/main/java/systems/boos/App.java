@@ -15,5 +15,6 @@ public class App {
     Demos.binarySearch(output);
     Demos.selectionSort(output);
     Demos.sum(output);
+    Demos.count(output);
   }
 }

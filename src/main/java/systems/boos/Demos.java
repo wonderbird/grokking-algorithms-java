@@ -56,4 +56,24 @@ public class Demos {
 
     output.append("  Sum: %s%n%n%n", sum);
   }
+
+  public static void count(Output output) {
+    output.append("Count of Items in List%n");
+    output.append("======================%n%n");
+
+    var list = List.of(
+      "Bred",
+      "Butter",
+      "Garlic",
+      "Ice Cream",
+      "Pizza",
+      "Cookies",
+      "Car",
+      "Rubber Duck"
+    );
+    output.append("List: %s%n", list);
+
+    var count = Count.count(list);
+    output.append("Count: %s%n%n%n", count);
+  }
 }
