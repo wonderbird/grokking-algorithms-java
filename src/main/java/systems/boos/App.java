@@ -16,5 +16,6 @@ public class App {
     Demos.selectionSort(output);
     Demos.sum(output);
     Demos.count(output);
+    Demos.max(output);
   }
 }

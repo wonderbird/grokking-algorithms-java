@@ -25,3 +25,10 @@ List: [Bred, Butter, Garlic, Ice Cream, Pizza, Cookies, Car, Rubber Duck]
 Count: 8
 
 
+Maximum of List
+===============
+
+   List: [82, 973927, 898, 454, 21, 2, 3, 3, 67, 8, 973927, 886, 98, 0, 0]
+Maximum: 973927
+
+

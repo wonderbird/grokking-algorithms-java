@@ -76,4 +76,31 @@ public class Demos {
     var count = Count.count(list);
     output.append("Count: %s%n%n%n", count);
   }
+
+  public static void max(Output output) {
+    output.append("Maximum of List%n");
+    output.append("===============%n%n");
+
+    var list = List.of(
+      82,
+      973927,
+      898,
+      454,
+      21,
+      2,
+      3,
+      3,
+      67,
+      8,
+      973927,
+      886,
+      98,
+      0,
+      0
+    );
+    output.append("   List: %s%n", list);
+
+    var count = Max.max(list);
+    output.append("Maximum: %s%n%n%n", count);
+  }
 }
