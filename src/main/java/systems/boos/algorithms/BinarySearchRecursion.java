@@ -7,26 +7,30 @@ public class BinarySearchRecursion implements CanSearch {
 
   @Override
   public Optional<Integer> binarySearch(List<Integer> numbers, int target) {
-    if (numbers.isEmpty()) {
+    return binarySearchRecursive(numbers, target, 0, numbers.size() - 1);
+  }
+
+  // Adopted from https://www.geeksforgeeks.org/binary-search/#recursive-binary-search-algorithm
+  private Optional<Integer> binarySearchRecursive(
+    List<Integer> numbers,
+    int target,
+    int left,
+    int right
+  ) {
+    if (left > right) {
       return Optional.empty();
     }
 
-    if (numbers.size() == 1) {
-      if (numbers.get(0) == target) {
-        return Optional.of(0);
-      } else {
-        return Optional.empty();
-      }
+    var center = (left + right) / 2;
+
+    if (numbers.get(center) == target) {
+      return Optional.of(center);
     }
 
-    var right = numbers.size();
-    var center = right / 2;
-
     if (target < numbers.get(center)) {
-      return binarySearch(numbers.subList(0, center), target);
+      return binarySearchRecursive(numbers, target, left, center - 1);
     } else {
-      var result = binarySearch(numbers.subList(center, right), target);
-      return result.map(index -> center + index);
+      return binarySearchRecursive(numbers, target, center + 1, right);
     }
   }
 
