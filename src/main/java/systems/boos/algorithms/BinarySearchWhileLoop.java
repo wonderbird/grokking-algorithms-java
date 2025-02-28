@@ -3,14 +3,10 @@ package systems.boos.algorithms;
 import java.util.List;
 import java.util.Optional;
 
-public class BinarySearch {
+public class BinarySearchWhileLoop implements CanSearch {
 
-  private BinarySearch() {}
-
-  public static Optional<Integer> binarySearch(
-    List<Integer> numbers,
-    int target
-  ) {
+  @Override
+  public Optional<Integer> binarySearch(List<Integer> numbers, int target) {
     var indexOfLowestCandidate = 0;
     var indexOfHighestCandidate = numbers.size() - 1;
 
@@ -28,5 +24,10 @@ public class BinarySearch {
     }
 
     return Optional.empty();
+  }
+
+  @Override
+  public String getDescription() {
+    return "While Loop";
   }
 }

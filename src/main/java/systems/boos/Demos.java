@@ -7,13 +7,13 @@ public class Demos {
 
   private Demos() {}
 
-  static void binarySearch(Output output) {
-    output.append("Binary Search%n");
-    output.append("=============%n%n");
+  static void binarySearch(Output output, CanSearch searcher) {
+    output.append("Binary Search (%s)%n", searcher.getDescription());
+    output.append("==========================%n%n");
 
     var numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     var target = 9;
-    var searchResult = BinarySearch.binarySearch(numbers, target);
+    var searchResult = searcher.binarySearch(numbers, target);
 
     if (searchResult.isPresent()) {
       var foundIndex = searchResult.get();
