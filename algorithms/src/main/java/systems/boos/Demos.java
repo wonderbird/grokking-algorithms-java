@@ -13,7 +13,7 @@ public class Demos {
 
     var numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     var target = 9;
-    var searchResult = searcher.binarySearch(numbers, target);
+    var searchResult = searcher.search(numbers, target);
 
     if (searchResult.isPresent()) {
       var foundIndex = searchResult.get();

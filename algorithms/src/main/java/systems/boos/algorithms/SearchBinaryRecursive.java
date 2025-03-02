@@ -3,15 +3,15 @@ package systems.boos.algorithms;
 import java.util.List;
 import java.util.Optional;
 
-public class BinarySearchRecursion implements CanSearch {
+public class SearchBinaryRecursive implements CanSearch {
 
   @Override
-  public Optional<Integer> binarySearch(List<Integer> numbers, int target) {
-    return binarySearchRecursive(numbers, target, 0, numbers.size() - 1);
+  public Optional<Integer> search(List<Integer> numbers, int target) {
+    return searchRecursive(numbers, target, 0, numbers.size() - 1);
   }
 
   // Adopted from https://www.geeksforgeeks.org/binary-search/#recursive-binary-search-algorithm
-  private Optional<Integer> binarySearchRecursive(
+  private Optional<Integer> searchRecursive(
     List<Integer> numbers,
     int target,
     int left,
@@ -28,9 +28,9 @@ public class BinarySearchRecursion implements CanSearch {
     }
 
     if (target < numbers.get(center)) {
-      return binarySearchRecursive(numbers, target, left, center - 1);
+      return searchRecursive(numbers, target, left, center - 1);
     } else {
-      return binarySearchRecursive(numbers, target, center + 1, right);
+      return searchRecursive(numbers, target, center + 1, right);
     }
   }
 

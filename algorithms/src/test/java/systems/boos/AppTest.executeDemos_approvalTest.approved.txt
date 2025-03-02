@@ -10,6 +10,12 @@ Binary Search (Recursion)
 Search 9 -> 8 is the index; 9 is the value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
+Binary Search (Simple search with for loop)
+==========================
+
+Search 9 -> 8 is the index; 9 is the value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
 Selection Sort
 ==============
 

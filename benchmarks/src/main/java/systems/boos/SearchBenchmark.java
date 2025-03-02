@@ -3,10 +3,24 @@ package systems.boos;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.*;
-import systems.boos.algorithms.BinarySearchRecursion;
-import systems.boos.algorithms.BinarySearchWhileLoop;
+import systems.boos.algorithms.SearchBinaryRecursive;
+import systems.boos.algorithms.SearchBinaryWhileLoop;
+import systems.boos.algorithms.SearchSimpleForLoop;
 
-public class BinarySearchBenchmark {
+public class SearchBenchmark {
+
+  /**
+   * Benchmark the simple search algorithm implemented with a for loop.
+   * @param plan benchmark parameters
+   * @return search result is returned in order to avoid dead code elimination
+   */
+  @Benchmark
+  @Fork(value = 10, warmups = 1)
+  @BenchmarkMode(Mode.AverageTime)
+  @OutputTimeUnit(TimeUnit.MICROSECONDS)
+  public Optional<Integer> forLoop(ExecutionPlan plan) {
+    return new SearchSimpleForLoop().search(plan.numbers, plan.target);
+  }
 
   /**
    * Benchmark the binary search algorithm implemented with a recursion.
@@ -18,7 +32,7 @@ public class BinarySearchBenchmark {
   @BenchmarkMode(Mode.AverageTime)
   @OutputTimeUnit(TimeUnit.MICROSECONDS)
   public Optional<Integer> recursion(ExecutionPlan plan) {
-    return new BinarySearchRecursion().binarySearch(plan.numbers, plan.target);
+    return new SearchBinaryRecursive().search(plan.numbers, plan.target);
   }
 
   /**
@@ -31,6 +45,6 @@ public class BinarySearchBenchmark {
   @BenchmarkMode(Mode.AverageTime)
   @OutputTimeUnit(TimeUnit.MICROSECONDS)
   public Optional<Integer> whileLoop(ExecutionPlan plan) {
-    return new BinarySearchWhileLoop().binarySearch(plan.numbers, plan.target);
+    return new SearchBinaryWhileLoop().search(plan.numbers, plan.target);
   }
 }
