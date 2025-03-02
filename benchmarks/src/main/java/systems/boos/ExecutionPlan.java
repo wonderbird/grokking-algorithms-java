@@ -5,8 +5,6 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.openjdk.jmh.annotations.*;
-import systems.boos.algorithms.BinarySearchRecursion;
-import systems.boos.algorithms.CanSearch;
 
 @State(Scope.Benchmark)
 public class ExecutionPlan {
@@ -29,8 +27,6 @@ public class ExecutionPlan {
 
   private final Random random = new Random();
 
-  public CanSearch searcher;
-
   public List<Integer> numbers;
 
   public int target;
@@ -44,7 +40,5 @@ public class ExecutionPlan {
       .collect(Collectors.toList());
 
     target = random.nextInt(size) + firstInNumbers;
-
-    searcher = new BinarySearchRecursion();
   }
 }
