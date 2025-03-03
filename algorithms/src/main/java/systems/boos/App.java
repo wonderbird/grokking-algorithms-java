@@ -16,9 +16,9 @@ public class App {
   }
 
   static void executeDemos(Output output) {
-    Demos.binarySearch(output, new SearchBinaryWhileLoop());
-    Demos.binarySearch(output, new SearchBinaryRecursive());
-    Demos.binarySearch(output, new SearchSimpleForLoop());
+    Demos.search(output, new SearchBinaryWhileLoop());
+    Demos.search(output, new SearchBinaryRecursive());
+    Demos.search(output, new SearchSimpleForLoop());
     Demos.selectionSort(output);
     Demos.sum(output);
     Demos.count(output);

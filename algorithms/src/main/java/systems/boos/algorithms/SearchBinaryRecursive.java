@@ -36,6 +36,6 @@ public class SearchBinaryRecursive implements CanSearch {
 
   @Override
   public String getDescription() {
-    return "Recursion";
+    return "Binary Search Using Recursion";
   }
 }

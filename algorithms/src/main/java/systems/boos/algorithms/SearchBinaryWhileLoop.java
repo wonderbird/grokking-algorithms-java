@@ -28,6 +28,6 @@ public class SearchBinaryWhileLoop implements CanSearch {
 
   @Override
   public String getDescription() {
-    return "While Loop";
+    return "Binary Search Using While Loop";
   }
 }

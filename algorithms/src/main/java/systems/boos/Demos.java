@@ -7,9 +7,10 @@ public class Demos {
 
   private Demos() {}
 
-  static void binarySearch(Output output, CanSearch searcher) {
-    output.append("Binary Search (%s)%n", searcher.getDescription());
-    output.append("==========================%n%n");
+  static void search(Output output, CanSearch searcher) {
+    var heading = searcher.getDescription();
+    output.append("%s%n", heading);
+    output.append("%s%n%n", "=".repeat(heading.length()));
 
     var numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     var target = 9;

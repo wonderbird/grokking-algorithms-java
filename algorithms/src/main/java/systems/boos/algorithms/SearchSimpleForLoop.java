@@ -18,6 +18,6 @@ public class SearchSimpleForLoop implements CanSearch {
 
   @Override
   public String getDescription() {
-    return "Simple search with for loop";
+    return "Simple Search Using For Loop";
   }
 }
