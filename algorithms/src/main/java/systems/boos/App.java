@@ -20,6 +20,7 @@ public class App {
     Demos.search(output, new SearchBinaryRecursive());
     Demos.search(output, new SearchSimpleForLoop());
     Demos.selectionSort(output);
+    Demos.quickSort(output);
     Demos.sum(output);
     Demos.count(output);
     Demos.max(output);

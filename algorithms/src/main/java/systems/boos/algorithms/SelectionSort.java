@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SelectionSort {
+public class SelectionSort implements CanSort {
 
-  private SelectionSort() {}
-
-  public static List<Integer> selectionSort(List<Integer> numbers) {
+  @Override
+  public List<Integer> sort(List<Integer> numbers) {
     var remaining = new LinkedList<>(numbers);
     var result = new ArrayList<Integer>(numbers.size());
 

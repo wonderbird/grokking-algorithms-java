@@ -41,7 +41,21 @@ public class Demos {
 
     output.append("Shuffled input: %s%n", numbers);
 
-    var sorted = SelectionSort.selectionSort(numbers);
+    var sorted = new SelectionSort().sort(numbers);
+
+    output.append("   Sorted list: %s%n%n%n", sorted);
+  }
+
+  static void quickSort(Output output) {
+    output.append("Quicksort%n");
+    output.append("=========%n%n");
+
+    // generate a list of numbers from 1 to 10.
+    var numbers = List.of(2, 4, 5, 1, 10, 9, 7, 3, 8, 6);
+
+    output.append("Shuffled input: %s%n", numbers);
+
+    var sorted = new NotQuickSort().sort(numbers);
 
     output.append("   Sorted list: %s%n%n%n", sorted);
   }
