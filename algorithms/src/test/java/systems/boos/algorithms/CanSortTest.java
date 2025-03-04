@@ -48,6 +48,16 @@ public interface CanSortTest<T extends CanSort> {
   }
 
   @Test
+  default void sort_twoElementsSortedAscending_returnsSameList() {
+    List<Integer> input = List.of(7, 12);
+    var expected = new Integer[] { 7, 12 };
+
+    var actual = createSorter().sort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
   default void sort_twoElementsSortedDescending_sortsAscending() {
     List<Integer> input = List.of(12, 7);
     var expected = new Integer[] { 7, 12 };
@@ -61,6 +71,16 @@ public interface CanSortTest<T extends CanSort> {
   default void sort_severalUnsortedElements_sortsAscending() {
     List<Integer> input = List.of(12, 7, 42, 3);
     var expected = new Integer[] { 3, 7, 12, 42 };
+
+    var actual = createSorter().sort(input);
+
+    assertThat(actual, contains(expected));
+  }
+
+  @Test
+  default void sort_severalUnsortedElementsWithDuplicates_sortsAscending() {
+    List<Integer> input = List.of(12, 7, 42, 7, 3);
+    var expected = new Integer[] { 3, 7, 7, 12, 42 };
 
     var actual = createSorter().sort(input);
 

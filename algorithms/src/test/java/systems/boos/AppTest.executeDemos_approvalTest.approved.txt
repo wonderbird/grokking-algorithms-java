@@ -16,14 +16,14 @@ Simple Search Using For Loop
 Search 9 -> 8 is the index; 9 is the value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-Selection Sort
-==============
+SelectionSort
+=============
 
 Shuffled input: [2, 4, 5, 1, 10, 9, 7, 3, 8, 6]
    Sorted list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-Quicksort
+QuickSort
 =========
 
 Shuffled input: [2, 4, 5, 1, 10, 9, 7, 3, 8, 6]

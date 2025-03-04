@@ -32,30 +32,17 @@ public class Demos {
     output.append("%n%n");
   }
 
-  static void selectionSort(Output output) {
-    output.append("Selection Sort%n");
-    output.append("==============%n%n");
+  static void sort(Output output, CanSort sorter) {
+    var heading = sorter.getDescription();
+    output.append("%s%n", heading);
+    output.append("%s%n%n", "=".repeat(heading.length()));
 
     // generate a list of numbers from 1 to 10.
     var numbers = List.of(2, 4, 5, 1, 10, 9, 7, 3, 8, 6);
 
     output.append("Shuffled input: %s%n", numbers);
 
-    var sorted = new SelectionSort().sort(numbers);
-
-    output.append("   Sorted list: %s%n%n%n", sorted);
-  }
-
-  static void quickSort(Output output) {
-    output.append("Quicksort%n");
-    output.append("=========%n%n");
-
-    // generate a list of numbers from 1 to 10.
-    var numbers = List.of(2, 4, 5, 1, 10, 9, 7, 3, 8, 6);
-
-    output.append("Shuffled input: %s%n", numbers);
-
-    var sorted = new NotQuickSort().sort(numbers);
+    var sorted = sorter.sort(numbers);
 
     output.append("   Sorted list: %s%n%n%n", sorted);
   }

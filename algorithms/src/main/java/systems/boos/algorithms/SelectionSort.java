@@ -33,4 +33,9 @@ public class SelectionSort implements CanSort {
 
     return smallestIndex;
   }
+
+  @Override
+  public String getDescription() {
+    return "SelectionSort";
+  }
 }

@@ -1,8 +1,6 @@
 package systems.boos;
 
-import systems.boos.algorithms.SearchBinaryRecursive;
-import systems.boos.algorithms.SearchBinaryWhileLoop;
-import systems.boos.algorithms.SearchSimpleForLoop;
+import systems.boos.algorithms.*;
 
 public class App {
 
@@ -19,8 +17,8 @@ public class App {
     Demos.search(output, new SearchBinaryWhileLoop());
     Demos.search(output, new SearchBinaryRecursive());
     Demos.search(output, new SearchSimpleForLoop());
-    Demos.selectionSort(output);
-    Demos.quickSort(output);
+    Demos.sort(output, new SelectionSort());
+    Demos.sort(output, new QuickSort());
     Demos.sum(output);
     Demos.count(output);
     Demos.max(output);
