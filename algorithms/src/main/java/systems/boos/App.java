@@ -19,6 +19,7 @@ public class App {
     Demos.search(output, new SearchSimpleForLoop());
     Demos.sort(output, new SelectionSort());
     Demos.sort(output, new QuickSort());
+    Demos.sort(output, new CollectionsSort());
     Demos.sum(output);
     Demos.count(output);
     Demos.max(output);

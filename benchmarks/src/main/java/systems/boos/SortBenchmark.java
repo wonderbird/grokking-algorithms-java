@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.openjdk.jmh.annotations.*;
+import systems.boos.algorithms.CollectionsSort;
 import systems.boos.algorithms.QuickSort;
 import systems.boos.algorithms.SelectionSort;
 
@@ -34,6 +35,19 @@ public class SortBenchmark {
   @OutputTimeUnit(TimeUnit.MILLISECONDS)
   public List<Integer> quicksort(ExecutionPlan plan) {
     return new QuickSort().sort(plan.numbers);
+  }
+
+  /**
+   * Benchmark the Collections.sort algorithm.
+   * @param plan benchmark parameters
+   * @return search result is returned in order to avoid dead code elimination
+   */
+  @Benchmark
+  @Fork(value = 5, warmups = 1)
+  @BenchmarkMode(Mode.AverageTime)
+  @OutputTimeUnit(TimeUnit.MILLISECONDS)
+  public List<Integer> collectionsSort(ExecutionPlan plan) {
+    return new CollectionsSort().sort(plan.numbers);
   }
 
   @State(Scope.Benchmark)
