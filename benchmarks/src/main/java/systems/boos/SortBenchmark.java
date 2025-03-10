@@ -6,7 +6,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.openjdk.jmh.annotations.*;
 import systems.boos.algorithms.CollectionsSort;
-import systems.boos.algorithms.QuickSort;
+import systems.boos.algorithms.QuickSortPivotFirst;
+import systems.boos.algorithms.QuickSortPivotRandom;
 import systems.boos.algorithms.SelectionSort;
 
 public class SortBenchmark {
@@ -25,7 +26,7 @@ public class SortBenchmark {
   }
 
   /**
-   * Benchmark the quicksort algorithm.
+   * Benchmark the quicksort algorithm with first element as pivot.
    * @param plan benchmark parameters
    * @return search result is returned in order to avoid dead code elimination
    */
@@ -33,8 +34,21 @@ public class SortBenchmark {
   @Fork(value = 5, warmups = 1)
   @BenchmarkMode(Mode.AverageTime)
   @OutputTimeUnit(TimeUnit.MILLISECONDS)
-  public List<Integer> quicksort(ExecutionPlan plan) {
-    return new QuickSort().sort(plan.numbers);
+  public List<Integer> quicksortPivotFirst(ExecutionPlan plan) {
+    return new QuickSortPivotFirst().sort(plan.numbers);
+  }
+
+  /**
+   * Benchmark the quicksort algorithm with random element as pivot.
+   * @param plan benchmark parameters
+   * @return search result is returned in order to avoid dead code elimination
+   */
+  @Benchmark
+  @Fork(value = 5, warmups = 1)
+  @BenchmarkMode(Mode.AverageTime)
+  @OutputTimeUnit(TimeUnit.MILLISECONDS)
+  public List<Integer> quicksortPivotRandom(ExecutionPlan plan) {
+    return new QuickSortPivotRandom().sort(plan.numbers);
   }
 
   /**

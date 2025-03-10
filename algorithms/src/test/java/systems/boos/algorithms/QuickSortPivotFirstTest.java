@@ -5,11 +5,11 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class QuickSortTest implements CanSortTest<QuickSort> {
+class QuickSortPivotFirstTest implements CanSortTest<QuickSortPivotFirst> {
 
   @Override
-  public QuickSort createSorter() {
-    return new QuickSort();
+  public QuickSortPivotFirst createSorter() {
+    return new QuickSortPivotFirst();
   }
 
   @Override

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class QuickSort implements CanSort {
+public abstract class QuickSort {
 
   public List<Integer> sort(List<Integer> numbers) {
     if (numbers.size() <= 1) {
       return numbers;
     }
 
-    var pivot = numbers.get(0);
+    var pivot = numbers.get(calculatePivotIndex(numbers.size()));
     var less = new ArrayList<Integer>();
     var greater = new ArrayList<Integer>();
 
@@ -29,8 +29,5 @@ public class QuickSort implements CanSort {
     ).toList();
   }
 
-  @Override
-  public String getDescription() {
-    return "QuickSort";
-  }
+  protected abstract int calculatePivotIndex(int sizeOfNumbers);
 }
