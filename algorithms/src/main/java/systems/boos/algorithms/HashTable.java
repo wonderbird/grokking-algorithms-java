@@ -8,24 +8,26 @@ public class HashTable {
     values = new Integer[size];
   }
 
+  public void add(String key, int value) {
+    var index = calculateIndexFromHashFor(key);
+    values[index] = value;
+  }
+
   public Integer get(String key) {
-    var index = hashString(key);
+    var index = calculateIndexFromHashFor(key);
     return values[index];
   }
 
-  private int hashString(String key) {
+  private int calculateIndexFromHashFor(String key) {
     var hash = key.hashCode();
 
+    // limit index to 0 .. values.length
     var boundedHash = hash % values.length;
+
     if (boundedHash < 0) {
       boundedHash += values.length;
     }
 
     return boundedHash;
-  }
-
-  public void add(String key, int value) {
-    var index = hashString(key);
-    values[index] = value;
   }
 }
